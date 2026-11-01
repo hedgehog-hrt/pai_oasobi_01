@@ -1,4 +1,4 @@
-# P-AI ROSA: Single-GPU Reproduction Prototype
+# Implementation and Evaluation of a Single GPU ROSA Reproduction Prototype
 
 An independent implementation based on **ROSA: A Robotics Foundation Model Serving System for Robot Factories**. This project explores how shared foundation-model inference can serve multiple robots while respecting response-time and control requirements.
 
