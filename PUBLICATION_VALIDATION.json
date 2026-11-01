@@ -1,0 +1,290 @@
+{
+  "snapshot_date": "2026-11-01",
+  "project_source_version": "0.20.17",
+  "scope": "Public packaging and focused CPU verification only; no new GPU/model or robot trials.",
+  "cpu_examples": [
+    {
+      "arguments": [
+        "-m",
+        "rosa_repro.cli",
+        "solve",
+        "examples/p4.json"
+      ],
+      "exit_code": 0,
+      "status": "feasible",
+      "gpu_execution": false
+    },
+    {
+      "arguments": [
+        "-m",
+        "rosa_repro.cli",
+        "solve-heterogeneous",
+        "examples/r07_weighted.json"
+      ],
+      "exit_code": 0,
+      "status": "feasible",
+      "gpu_execution": false
+    },
+    {
+      "arguments": [
+        "-m",
+        "rosa_repro.cli",
+        "evaluate-p1",
+        "examples/p1_measurement.json"
+      ],
+      "exit_code": 0,
+      "status": null,
+      "gpu_execution": false
+    },
+    {
+      "arguments": [
+        "-m",
+        "rosa_repro.cli",
+        "evaluate-pipeline",
+        "examples/p4_horizon_audit.json"
+      ],
+      "exit_code": 0,
+      "status": null,
+      "gpu_execution": false
+    }
+  ],
+  "cpu_tests": {
+    "tests": 105,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "files": [
+      "test_scheduler.py",
+      "test_multicomponent.py",
+      "test_heterogeneous.py",
+      "test_pod_transfer.py",
+      "test_distribution.py"
+    ],
+    "warning": "One expected duplicate-ZIP-member warning in an invalid-archive rejection test."
+  },
+  "privacy_review": {
+    "blocking_patterns_found": 0,
+    "recursive_archive_inspection": true,
+    "existing_reproduction_checksums_verified": 518,
+    "pdf_pages_text_checked": 17,
+    "pdf_docx_video_metadata_checked": true,
+    "email_candidates_found": 0,
+    "numeric_ip_candidates_review": "Dotted package versions only; actual deployment endpoints absent.",
+    "limitations": "Pattern and metadata review; not a guarantee against every possible sensitive detail. Fixed visual artifacts retain their previously reviewed bytes."
+  },
+  "local_markdown_links_checked": 133,
+  "broken_local_markdown_links": 0,
+  "gitignore_checks": {
+    "excluded_cases": 22,
+    "retained_cases": 9
+  },
+  "checksum_verifier_behavior": {
+    "cases_passed": 10,
+    "cases": [
+      {
+        "case": "refresh",
+        "expected_exit_code": 0,
+        "passed": true
+      },
+      {
+        "case": "unchanged_copy",
+        "expected_exit_code": 0,
+        "passed": true
+      },
+      {
+        "case": "modified_file_rejected",
+        "expected_exit_code": 1,
+        "passed": true
+      },
+      {
+        "case": "missing_file_rejected",
+        "expected_exit_code": 1,
+        "passed": true
+      },
+      {
+        "case": "unexpected_file_rejected",
+        "expected_exit_code": 1,
+        "passed": true
+      },
+      {
+        "case": "ignored_runtime_files_allowed",
+        "expected_exit_code": 0,
+        "passed": true
+      },
+      {
+        "case": "symlink_rejected",
+        "expected_exit_code": 1,
+        "passed": true
+      },
+      {
+        "case": "traversal_rejected",
+        "expected_exit_code": 1,
+        "passed": true
+      },
+      {
+        "case": "git_unavailable_hash_only_fallback",
+        "expected_exit_code": 0,
+        "passed": true
+      },
+      {
+        "case": "git_unavailable_refresh_rejected",
+        "expected_exit_code": 1,
+        "passed": true
+      }
+    ]
+  },
+  "original_directory_preservation": {
+    "entry_metadata_unchanged": true,
+    "copied_original_file_hashes_verified": 329,
+    "note": "No original files were edited. Full original-tree mode/size/mtime inventory and copied-file hashes compared."
+  },
+  "publication_copy_changes": [
+    "repository/scripts/pod_sync.py",
+    "repository/scripts/verify_runtime_transfer_cpu.py",
+    "repository/tests/test_pod_transfer.py",
+    "repository/examples/pod/connection.template.json",
+    "repository/docs/MODEL_ALIGNMENT_20261101.md",
+    "repository/docs/REPRODUCTION_STATUS_20261101.md",
+    "repository/docs/batch-admission-and-warmup.md",
+    "repository/docs/closed-loop-and-action-regression.md",
+    "repository/docs/measurement-quality-and-batch-prediction.md",
+    "repository/docs/pipeline-runtime.md",
+    "repository/docs/postpod-model-profiling.md",
+    "repository/docs/prepod-4-5.md",
+    "repository/docs/prepod-readiness-1-2-3.md",
+    "repository/docs/prepod.md",
+    "repository/docs/profile-adoption-workflow-report.md",
+    "repository/docs/r02.md",
+    "repository/docs/runtime-kernel-and-pod-transfer.md",
+    "repository/docs/single-gpu-prototype.md",
+    "repository/docs/vlm-backends.md",
+    "repository/README.md",
+    "repository/pyproject.toml"
+  ],
+  "unchanged_copied_files": 308,
+  "fixed_artifacts_verified": [
+    {
+      "file": "repository/reports/ROSA_single_GPU_submission_EN_20261101.docx",
+      "sha256": "1ec54226a6776300e53ec5e32cf47825bdba5d83043f09f12161f938d1495879"
+    },
+    {
+      "file": "repository/reports/ROSA_single_GPU_submission_EN_20261101.pdf",
+      "sha256": "65521c7ff0f6e3af1b5c91e5d2c55f250234a88c058731bacc3145c71f43f8a9"
+    },
+    {
+      "file": "repository/media/ROSA_P1_P4_combined_demo_EN_20261101.frames.jsonl",
+      "sha256": "8b3e747a3f6f02b780314f67b63d00dde6d3b5f51f9c6b5c8dcb1f8ea4052278"
+    },
+    {
+      "file": "repository/media/ROSA_P1_P4_combined_demo_EN_20261101.json",
+      "sha256": "a5d5883fd80306ed98dd77d309d48fb13b592669dffb66b759894b64850a0a32"
+    },
+    {
+      "file": "repository/media/ROSA_P1_P4_combined_demo_EN_20261101.mp4",
+      "sha256": "56e8991b91959ff12fc44ae89bae73c975b1b89b6e5e01f6dadb2d9fa175ecf8"
+    },
+    {
+      "file": "repository/media/ROSA_P1_P4_combined_demo_EN_20261101.txt",
+      "sha256": "e2aa671c82f1c31224c5b69fd8d7a73ea35f3fe206ea91f9530f12c3b60c0e18"
+    },
+    {
+      "file": "repository/media/ROSA_P2_P4_success_and_failure_20261101.frames.jsonl",
+      "sha256": "a493e4ab886f1a13ed706b341e71af5726e464e28629160f314f831a284dc8a9"
+    },
+    {
+      "file": "repository/media/ROSA_P2_P4_success_and_failure_20261101.frozen.json",
+      "sha256": "7506e4a1db82f436bece85a4d1b4fc0b360f95cb04f9132578ac9dc6a564b646"
+    },
+    {
+      "file": "repository/media/ROSA_P2_P4_success_and_failure_20261101.json",
+      "sha256": "a123119f6c096b659aa3f2f7696d45e300e3f5c252311801ee28c641f6597488"
+    },
+    {
+      "file": "repository/media/ROSA_P2_P4_success_and_failure_20261101.mp4",
+      "sha256": "70fa7309c3a51a83f1ff62705989417bf739f0672d8ffc66357fe6c0c151130f"
+    },
+    {
+      "file": "repository/media/ROSA_P2_P4_success_and_failure_20261101.txt",
+      "sha256": "0a69ad7723537cfed3c868d9d061c07d2761e798de3101626e4d2ddecd818e33"
+    },
+    {
+      "file": "release-assets/ROSA_reproduction_reference_20261101_rev1.zip",
+      "sha256": "ee83463004ccd24c7aea2abbaa5baf974f280b580e67ca4545e8013085046f5d"
+    }
+  ],
+  "github_uploaded": false,
+  "license_selected": true,
+  "project_software_license": "Apache-2.0",
+  "license_update": {
+    "date": "2026-11-01",
+    "scope": "Documentation, license notices, ignore rule and package license metadata only.",
+    "core_source_and_test_files_unchanged": 281,
+    "prior_cpu_results_retained": true,
+    "new_cpu_or_gpu_model_trials": false,
+    "copied_license_texts_verified_against_official_sources": 6,
+    "model_card_license_declarations_verified": 3,
+    "notice_companion": {
+      "file": "ROSA_licenses_and_notices_20261101.zip",
+      "sha256": "1b0d5ce411b5d85d62515ecb0027166653024c9b1426714062dbf996878c72f5",
+      "bytes": 29796,
+      "internal_checksums_verified": 12,
+      "historical_source_bindings": 15
+    },
+    "markdown_links_checked_in_repository_and_companion": 151,
+    "license_and_notice_files_in_wheel_verified": 10,
+    "package_metadata_spdx_expression": "Apache-2.0",
+    "build_requirement_for_standard_license_metadata": "setuptools>=77.0.3",
+    "source_directory_metadata_preserved": true,
+    "fixed_report_media_and_reference_zip_preserved": true,
+    "cc_by_4_content_license_assigned": false,
+    "personal_copyright_identity_inserted": false,
+    "scope_limit": "Not an exhaustive inventory of transitive runtime, model or simulator-asset rights."
+  },
+  "readme_link_cleanup": {
+    "date": "2026-11-01",
+    "removed_from_intro_only": [
+      "- [English report \u2014 5-page main text and 12-page appendix](reports/ROSA_single_GPU_submission_EN_20261101.pdf)",
+      "- [Versioned reproduction materials](docs/REPRODUCTION_ASSETS.md)",
+      "- [P1\u2013P4 demonstration \u2014 3 min 24 s](media/ROSA_P1_P4_combined_demo_EN_20261101.mp4)",
+      "- [Publication contents and integrity verification](PUBLICATION.md)"
+    ],
+    "retained": [
+      "#licensing",
+      "https://arxiv.org/abs/2607.01088v1"
+    ],
+    "reason": "Remove four navigation links dependent on repository file placement; local targets exist. Remote repository upload state is unknown.",
+    "referenced_files_deleted": false,
+    "paper_url_reachable": true,
+    "fixed_artifact_hashes_preserved": true
+  },
+  "readme_full_link_check": {
+    "checked_on": "2026-11-01",
+    "readme_sha256": "46ca54a6900bc174cacc1152faa221a874f66c38d8f333d4bffb3d4116b22232",
+    "link_occurrences": 33,
+    "local_link_occurrences": 20,
+    "local_targets_case_and_anchors_valid": true,
+    "external_unique_urls": 12,
+    "external_validation_method": "Each URL opened and returned the expected public page through the web browsing tool; no HTTP status code is inferred.",
+    "external_pages_accessible": [
+      "https://arxiv.org/abs/2607.01088v1",
+      "https://github.com/Lifelong-Robot-Learning/LIBERO",
+      "https://github.com/NVIDIA/Isaac-GR00T",
+      "https://github.com/google/or-tools",
+      "https://github.com/ray-project/ray",
+      "https://github.com/vllm-project/vllm",
+      "https://huggingface.co/Qwen",
+      "https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct/blob/66285546d2b821cf421d4f5eb2576359d3770cd3/LICENSE",
+      "https://huggingface.co/nvidia/Cosmos-Reason2-2B",
+      "https://huggingface.co/nvidia/GR00T-N1.7-LIBERO",
+      "https://huggingface.co/nvidia/GR00T-N1.7-LIBERO/blob/2ea293aa20ba7cf5bbf3ba17a5fbcb1a01cbfe21/README.md",
+      "https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/"
+    ],
+    "confirmed_broken_links": [],
+    "github_deployment_url": null,
+    "github_deployed_file_layout_checked": false,
+    "readme_changed": false,
+    "scope": "Local public repository tree plus public external pages. Owner confirmed that the GitHub repository is not yet published.",
+    "publication_status": "not_published_confirmed_by_owner",
+    "github_deployed_file_layout_check_reason": "Not applicable until publication."
+  }
+}

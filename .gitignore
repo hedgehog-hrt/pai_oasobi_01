@@ -1,0 +1,71 @@
+# Python environments and generated files
+.venv/
+venv/
+.cache/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+.coverage*
+htmlcov/
+
+# Local experiments, generated reports, downloaded models and captures
+/results/
+/output/
+/outputs/
+/work/
+/tmp/
+/prepared/
+/captures/
+/models/
+/checkpoints/
+/release-assets/
+/releases/
+*.log
+*.sqlite*
+*.db
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+
+# Credentials and deployment-specific configuration; keep templates
+.env
+.env.*
+!.env.example
+!.env.template
+.ssh/
+.aws/
+.huggingface/
+.git-credentials
+.netrc
+credentials.json
+token
+stored_tokens
+id_rsa*
+id_ed25519*
+*.pem
+*.key
+connection.json
+paths.json
+*.local.json
+*.local.yaml
+*.local.yml
+
+# Fixed reproduction ZIPs are Release assets, not Git source files
+ROSA_reproduction_reference_*.zip
+ROSA_licenses_and_notices_*.zip
+
+# Operating-system/editor state
+.DS_Store
+._*
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Curated reports/ and media/ files are deliberately tracked.

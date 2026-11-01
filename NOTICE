@@ -1,0 +1,29 @@
+P-AI ROSA: Single-GPU Reproduction Prototype
+
+Original project software is made available under the Apache License, Version 2.0.
+The scope and exceptions are described in README.md and docs/LICENSE_SCOPE.md.
+This notice does not add to or change the terms of any license.
+
+Third-party attributions:
+
+- NVIDIA/Isaac-GR00T: upstream configuration excerpts retained in
+  src/rosa_repro/shared_environment_sources.json. See LICENSES/Isaac-GR00T-LICENSE.txt.
+- vLLM project: upstream requirements excerpts retained in the same file.
+  See LICENSES/vLLM-LICENSE.txt.
+- LIBERO: Copyright (c) 2023 Lifelong Robot Learning.
+  See LICENSES/LIBERO-LICENSE.txt. Its software license is not a blanket
+  license for all independently sourced simulator assets or datasets.
+- Noto Sans JP font software: Copyright 2014-2021 Adobe (http://www.adobe.com/),
+  with Reserved Font Name 'Source'. See LICENSES/NotoSansJP-OFL.txt.
+- Qwen2.5-VL-3B-Instruct: Qwen is licensed under the Qwen RESEARCH LICENSE
+  AGREEMENT, Copyright (c) Alibaba Cloud. All Rights Reserved.
+  See LICENSES/Qwen2.5-VL-3B-LICENSE.txt. Model weights are obtained separately.
+- Built on NVIDIA Cosmos: the recorded GR00T-based prototype uses the
+  Cosmos-Reason2 dependency. NVIDIA model materials retain the NVIDIA Open
+  Model License Agreement and its applicable attribution requirements.
+
+See THIRD_PARTY_NOTICES.md for exact upstream versions, source locations and
+the distinction between bundled material and external model dependencies.
+
+This is an independent reproduction project. NVIDIA, Alibaba Cloud and the
+other upstream projects do not endorse this implementation through this notice.

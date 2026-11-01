@@ -1,0 +1,18 @@
+# Preserve exact bytes covered by SHA256SUMS, including across platforms.
+* -text
+
+# Keep human-readable diffs without automatic end-of-line conversion.
+*.py diff
+*.md diff
+*.txt diff
+*.json diff
+*.jsonl diff
+*.toml diff
+*.lock diff
+*.in diff
+*.sh diff
+
+*.pdf binary
+*.docx binary
+*.mp4 binary
+*.zip binary
