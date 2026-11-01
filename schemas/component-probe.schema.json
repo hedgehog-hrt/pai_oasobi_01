@@ -1,0 +1,125 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "mode": {
+      "enum": [
+        "gpu",
+        "cpu_dummy"
+      ]
+    },
+    "component_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "role": {
+      "enum": [
+        "s1",
+        "s2",
+        "safety",
+        "monitor"
+      ]
+    },
+    "model_revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "runtime_fingerprint": {
+      "type": "string",
+      "minLength": 1
+    },
+    "hardware_kind": {
+      "type": "string",
+      "minLength": 1
+    },
+    "binding": {
+      "type": "object"
+    },
+    "batch_size": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 64
+    },
+    "batch_wait_ms": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1000
+    },
+    "streams": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 256
+    },
+    "deadline_ms": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "maximum": 1000000000.0
+    },
+    "request_timeout_s": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "maximum": 600
+    },
+    "drain_timeout_s": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "maximum": 600
+    },
+    "max_dispatch_lag_s": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 10
+    },
+    "payload_overlay": {
+      "type": "object",
+      "properties": {
+        "plan": {
+          "type": "string",
+          "minLength": 1
+        },
+        "context": {
+          "type": "object",
+          "properties": {
+            "execution_history": {
+              "type": "string",
+              "minLength": 1
+            },
+            "previous_plan": {
+              "type": "string",
+              "minLength": 1
+            },
+            "task_feedback": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "mode",
+    "component_id",
+    "role",
+    "model_revision",
+    "runtime_fingerprint",
+    "hardware_kind",
+    "binding",
+    "batch_size",
+    "batch_wait_ms",
+    "streams",
+    "deadline_ms",
+    "request_timeout_s",
+    "drain_timeout_s",
+    "max_dispatch_lag_s",
+    "payload_overlay"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,249 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "workload": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "robots": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1024
+        },
+        "action_time_s": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1000000000.0
+        },
+        "s2_horizon": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "components": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "role": {
+                "enum": [
+                  "s1",
+                  "s2",
+                  "obligation"
+                ]
+              },
+              "model_revision": {
+                "type": "string",
+                "minLength": 1
+              },
+              "runtime_fingerprint": {
+                "type": "string",
+                "minLength": 1
+              },
+              "deadline_ms": {
+                "type": "number",
+                "exclusiveMinimum": 0,
+                "maximum": 1000000000.0
+              },
+              "periodic_hz": {
+                "type": "number",
+                "exclusiveMinimum": 0,
+                "maximum": 1000000000.0
+              }
+            },
+            "required": [
+              "id",
+              "role",
+              "model_revision",
+              "runtime_fingerprint",
+              "deadline_ms"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "id",
+        "robots",
+        "action_time_s",
+        "s2_horizon",
+        "components"
+      ],
+      "additionalProperties": false
+    },
+    "hardware": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "gpu_count": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 128
+        },
+        "memory_mib": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1000000000.0
+        }
+      },
+      "required": [
+        "kind",
+        "gpu_count",
+        "memory_mib"
+      ],
+      "additionalProperties": false
+    },
+    "profiles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "component_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "hardware_kind": {
+            "type": "string",
+            "minLength": 1
+          },
+          "model_revision": {
+            "type": "string",
+            "minLength": 1
+          },
+          "runtime_fingerprint": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "enum": [
+              "synthetic",
+              "measured"
+            ]
+          },
+          "batch_size": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1024
+          },
+          "batch_wait_ms": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1000000000.0
+          },
+          "memory_mib": {
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "maximum": 1000000000.0
+          },
+          "capacity_bound_hz": {
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "maximum": 1000000000.0
+          },
+          "evidence_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "points": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "rate_hz": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1000000000.0
+                },
+                "mean_ms": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1000000000.0
+                },
+                "p99_ms": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1000000000.0
+                },
+                "sample_count": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "duration_s": {
+                  "type": "number",
+                  "exclusiveMinimum": 0,
+                  "maximum": 1000000000.0
+                }
+              },
+              "required": [
+                "rate_hz",
+                "mean_ms",
+                "p99_ms"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "id",
+          "component_id",
+          "hardware_kind",
+          "model_revision",
+          "runtime_fingerprint",
+          "source",
+          "batch_size",
+          "batch_wait_ms",
+          "memory_mib",
+          "points"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "search": {
+      "type": "object",
+      "properties": {
+        "frequency_tolerance_hz": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1000000000.0
+        },
+        "time_limit_s": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1000000000.0
+        }
+      },
+      "required": [
+        "frequency_tolerance_hz",
+        "time_limit_s"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "workload",
+    "hardware",
+    "profiles",
+    "search"
+  ],
+  "additionalProperties": false
+}

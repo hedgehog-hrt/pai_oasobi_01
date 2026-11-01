@@ -1,0 +1,160 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "role": {
+      "enum": [
+        "s2",
+        "safety",
+        "monitor"
+      ]
+    },
+    "model_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "revision": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "engine": {
+      "enum": [
+        "transformers",
+        "vllm"
+      ]
+    },
+    "image_keys": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 4,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "instruction_key": {
+      "type": "string",
+      "minLength": 1
+    },
+    "system_prompt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "safety_constraints": {
+      "type": "string",
+      "minLength": 1
+    },
+    "min_pixels": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "max_pixels": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "max_model_len": {
+      "type": "integer",
+      "minimum": 256,
+      "maximum": 32768
+    },
+    "processor_use_fast": {
+      "const": false
+    },
+    "max_new_tokens": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 1024
+    },
+    "max_context_chars": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 32768
+    },
+    "dtype": {
+      "enum": [
+        "float16",
+        "bfloat16"
+      ]
+    },
+    "seed": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4294967295
+    },
+    "attention_backend": {
+      "enum": [
+        "sdpa",
+        "flash_attention_2",
+        "vllm_auto"
+      ]
+    },
+    "max_concurrent_requests": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 128
+    },
+    "gpu_memory_utilization": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "maximum": 0.95
+    },
+    "enable_prefix_caching": {
+      "const": false
+    },
+    "enforce_eager": {
+      "type": "boolean"
+    },
+    "generation_timeout_s": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "maximum": 300
+    },
+    "vision_attention_backend": {
+      "enum": [
+        "auto",
+        "TORCH_SDPA"
+      ]
+    },
+    "structured_output": {
+      "enum": [
+        "none",
+        "role_json_v1",
+        "role_json_compact_v1",
+        "safety_label_v1",
+        "monitor_label_v1",
+        "s2_short_v1",
+        "safety_evidence_v1",
+        "safety_visual_guard_v1"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "role",
+    "model_id",
+    "revision",
+    "engine",
+    "image_keys",
+    "instruction_key",
+    "system_prompt",
+    "safety_constraints",
+    "min_pixels",
+    "max_pixels",
+    "max_model_len",
+    "processor_use_fast",
+    "max_new_tokens",
+    "max_context_chars",
+    "dtype",
+    "seed",
+    "attention_backend",
+    "max_concurrent_requests",
+    "gpu_memory_utilization",
+    "enable_prefix_caching",
+    "enforce_eager",
+    "generation_timeout_s"
+  ],
+  "additionalProperties": false
+}

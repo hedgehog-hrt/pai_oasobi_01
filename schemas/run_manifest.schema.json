@@ -1,0 +1,199 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mode": {
+      "enum": [
+        "cpu_solver",
+        "gpu_replay",
+        "live_simulation"
+      ]
+    },
+    "measurement_phase": {
+      "enum": [
+        "exploratory",
+        "formal"
+      ]
+    },
+    "source_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "git_commit": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "git_dirty": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "git_diff_sha256": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "dependency_lock_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "python_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "clock_domain": {
+      "type": "string",
+      "minLength": 1
+    },
+    "gpu_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "gpus": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "type": "string",
+            "minLength": 1
+          },
+          "memory_mib": {
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "maximum": 1000000000.0
+          },
+          "driver": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "uuid",
+          "kind",
+          "memory_mib",
+          "driver"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "model_runtime": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "component_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "revision": {
+            "type": "string",
+            "minLength": 1
+          },
+          "dtype": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "torch_compile": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "cuda_graphs": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "attention_backend": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "input_schema_sha256": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "component_id",
+          "revision",
+          "dtype",
+          "torch_compile",
+          "cuda_graphs",
+          "attention_backend",
+          "input_schema_sha256"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "initial_states_sha256": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "observation_manifest_sha256": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "profile_manifest_sha256": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "unknown_fields": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "schema_version",
+    "run_id",
+    "mode",
+    "measurement_phase",
+    "source_sha256",
+    "git_commit",
+    "git_dirty",
+    "git_diff_sha256",
+    "dependency_lock_sha256",
+    "python_version",
+    "clock_domain",
+    "gpu_count",
+    "gpus",
+    "model_runtime",
+    "initial_states_sha256",
+    "observation_manifest_sha256",
+    "profile_manifest_sha256",
+    "unknown_fields"
+  ],
+  "additionalProperties": false
+}
