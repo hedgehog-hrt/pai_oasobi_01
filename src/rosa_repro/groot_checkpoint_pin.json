@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "model_id": "nvidia/GR00T-N1.7-LIBERO",
+  "revision": "2ea293aa20ba7cf5bbf3ba17a5fbcb1a01cbfe21",
+  "subdirectory": "libero_object",
+  "scope": "all indexed inference safetensors plus config, processor, statistics and embodiment mapping",
+  "files": {
+    "config.json": {
+      "size": 2266,
+      "sha256": "ce763f74ad1cda2ca9e67491229cbc5810d83cae675cb4dad839a69a9731fd97",
+      "kind": "inference_config"
+    },
+    "model.safetensors.index.json": {
+      "size": 104985,
+      "sha256": "407804ea5a62f4f8823f48811ae0edbb82fac101e9cf4d7273e6e2f692bb4d59",
+      "kind": "inference_config"
+    },
+    "processor_config.json": {
+      "size": 26935,
+      "sha256": "545bb44c7d8caaf5ac82df55b90831271a1469a4e48adcc9a5f469f064f4e121",
+      "kind": "inference_config"
+    },
+    "statistics.json": {
+      "size": 4298451,
+      "sha256": "193cbb84e44c6d53fe4736e5fcc80f5f5d35c1c0637b9b0c601d54b4cd610a69",
+      "kind": "inference_config"
+    },
+    "embodiment_id.json": {
+      "size": 2145,
+      "sha256": "abc4a749389837416a102d9455a8c089336f2e417afb18565703b9944974bc35",
+      "kind": "inference_config"
+    },
+    "model-00001-of-00002.safetensors": {
+      "size": 4990519232,
+      "sha256": "cfe3a25d809ac9558375e5e6ea3e2c550dce2fb51082dbcdb05395295e50183d",
+      "kind": "weight"
+    },
+    "model-00002-of-00002.safetensors": {
+      "size": 1919980184,
+      "sha256": "0c7e87f4c326564301e08751a2b61b9876f1062a041c5a90aae35fe8aac723de",
+      "kind": "weight"
+    }
+  },
+  "index_tensor_count": 1031,
+  "index_total_tensor_bytes": 6910361856,
+  "weights_total_bytes": 6910499416,
+  "source_metadata": {
+    "url": "https://huggingface.co/api/models/nvidia/GR00T-N1.7-LIBERO/revision/2ea293aa20ba7cf5bbf3ba17a5fbcb1a01cbfe21?blobs=true",
+    "sha256": "51de6570c2e7479d8ce5a180a415c8f8433ab7aba13d114581472d9798c92cd5",
+    "bytes": 44291
+  },
+  "external_dependencies_note": "Cosmos tokenizer/config/cache and upstream runtime are separate evidence; training optimizer/RNG states are outside inference scope"
+}
