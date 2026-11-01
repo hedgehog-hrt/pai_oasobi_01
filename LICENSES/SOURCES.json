@@ -1,0 +1,110 @@
+{
+  "review_date": "2026-11-01",
+  "copied_license_texts": [
+    {
+      "file": "Apache-2.0.txt",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+      "status": 200,
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "public_file": "LICENSE"
+    },
+    {
+      "file": "Isaac-GR00T-LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/NVIDIA/Isaac-GR00T/944fe70c4fd54e3fcb80a7d7258a328f9c061176/LICENSE",
+      "status": 200,
+      "bytes": 10808,
+      "sha256": "93363510f62ce25ad1a47605b0b06ab335edd82f1a444531c58dd30b6e5a5a0c",
+      "public_file": "LICENSES/Isaac-GR00T-LICENSE.txt"
+    },
+    {
+      "file": "vLLM-LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/v0.11.2/LICENSE",
+      "status": 200,
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "public_file": "LICENSES/vLLM-LICENSE.txt"
+    },
+    {
+      "file": "LIBERO-LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/Lifelong-Robot-Learning/LIBERO/8f1084e3132a39270c3a13ebe37270a43ece2a01/LICENSE",
+      "status": 200,
+      "bytes": 1080,
+      "sha256": "e2885fd30a08381b799c4a33385522b23d637b4051b8f9a7f9f2519944b68ff6",
+      "public_file": "LICENSES/LIBERO-LICENSE.txt"
+    },
+    {
+      "file": "NotoSansJP-OFL.txt",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosansjp/OFL.txt",
+      "status": 200,
+      "bytes": 4388,
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "public_file": "LICENSES/NotoSansJP-OFL.txt"
+    },
+    {
+      "file": "Qwen2.5-VL-3B-LICENSE.txt",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct/raw/66285546d2b821cf421d4f5eb2576359d3770cd3/LICENSE",
+      "status": 200,
+      "bytes": 7387,
+      "sha256": "b5c0e5cf74cf51af1ecbc4af597cfcd13fd9925611838884a681070838a14a50",
+      "public_file": "LICENSES/Qwen2.5-VL-3B-LICENSE.txt"
+    }
+  ],
+  "model_card_metadata_verified": [
+    {
+      "file": "Qwen3-VL-4B-model-card.md",
+      "url": "https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct/raw/ebb281ec70b05090aa6165b016eac8ec08e71b17/README.md",
+      "status": 200,
+      "bytes": 7133,
+      "sha256": "a884e5e78f7d6f7bfe237f909dbc41a126542e259dc79d8ab33cc8980580ff79",
+      "declared_license": "apache-2.0",
+      "bundled": false
+    },
+    {
+      "file": "Qwen3-VL-8B-model-card.md",
+      "url": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct/raw/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/README.md",
+      "status": 200,
+      "bytes": 7133,
+      "sha256": "6d5d06e0c3f069097002445d30dce9ee107db3afaf15563f09e6df49b8dcb4d7",
+      "declared_license": "apache-2.0",
+      "bundled": false
+    },
+    {
+      "file": "Qwen2.5-VL-7B-model-card.md",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/raw/cc594898137f460bfe9f0759e9844b3ce807cfb5/README.md",
+      "status": 200,
+      "bytes": 18574,
+      "sha256": "1fa65dbb08bc9ffe0b020409c8686f08b23008c5a68554353305fd2de6f2b81e",
+      "declared_license": "apache-2.0",
+      "bundled": false
+    }
+  ],
+  "upstream_notice_checks": [
+    {
+      "file": "Isaac-GR00T-NOTICE.txt",
+      "url": "https://raw.githubusercontent.com/NVIDIA/Isaac-GR00T/944fe70c4fd54e3fcb80a7d7258a328f9c061176/NOTICE",
+      "status": 404
+    },
+    {
+      "file": "vLLM-NOTICE.txt",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/v0.11.2/NOTICE",
+      "status": 404
+    }
+  ],
+  "noto_font_license_matches_authoring_source": true,
+  "external_model_license_references": [
+    {
+      "model": "nvidia/GR00T-N1.7-LIBERO",
+      "revision": "2ea293aa20ba7cf5bbf3ba17a5fbcb1a01cbfe21",
+      "source": "https://huggingface.co/nvidia/GR00T-N1.7-LIBERO/blob/2ea293aa20ba7cf5bbf3ba17a5fbcb1a01cbfe21/README.md",
+      "license_url": "https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/"
+    },
+    {
+      "model": "nvidia/Cosmos-Reason2-2B",
+      "revision": null,
+      "source": "https://huggingface.co/nvidia/Cosmos-Reason2-2B",
+      "scope": "Public model/access page; no new checkpoint pin verification"
+    }
+  ],
+  "scope": "Bundled license texts, named upstream excerpts/fonts and model cards; not all transitive dependencies."
+}
