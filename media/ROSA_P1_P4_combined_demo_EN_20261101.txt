@@ -1,0 +1,36 @@
+ROSA: shared inference and single-GPU prototype demonstrations
+
+Video: ROSA_P1_P4_combined_demo_EN_20261101.mp4
+Duration: 3 minutes 24 seconds
+Format: MP4 / H.264 / yuv420p / 1280 x 800 / 20 fps / no audio
+All on-screen labels are in English.
+
+00:00-00:30  P1: four independent LIBERO environments share one GR00T model
+              on one GPU. Complete 30-second measurement at normal speed.
+00:30-00:38  Introduction to the frozen P2-P4 video.
+00:38-01:53  v0.20.15, confirmation 3: complete 300-second measurement at 4x.
+01:53-01:59  Failure context.
+01:59-03:14  v0.20.16, confirmation 1: complete 300-second measurement at 4x.
+03:14-03:24  Scope and limitations.
+
+P1 and P2-P4 are separate trials. P1 has four independent environments;
+the P2-P4 trials have one environment per pipeline, three in total.
+They are not seven environments running together, and no physical robots
+or coordinated arms in a shared workspace are shown.
+
+The P1 segment uses the same observations and frame-to-observation mapping
+as the earlier P1 four-environment video, with English labels. It shows the
+recorded p1-b1 connection test. It is not a new performance measurement.
+Images are held between observed updates and are aligned by their first
+recorded request use, not camera capture timestamps. Pre-window observations
+initialize the display. 20 fps is the encoding rate, not the capture rate.
+No intermediate robot motion has been synthesized, and no new inference
+or simulator execution was performed.
+
+The full previously frozen 2:54 video is appended at 00:30 by stream copy.
+It is not trimmed, relabeled or re-encoded. Its original file and sidecar
+files remain unchanged. The frozen video retains its context about the
+selected successful trial, recovery failures and remaining limitations.
+
+The .json sidecar identifies sources and chapters. The .frames.jsonl sidecar
+maps encoded frames to their original saved observations.

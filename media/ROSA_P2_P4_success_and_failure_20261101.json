@@ -1,0 +1,145 @@
+{
+  "video": "ROSA_P2_P4_success_and_failure_20261101.mp4",
+  "sha256": "70fa7309c3a51a83f1ff62705989417bf739f0672d8ffc66357fe6c0c151130f",
+  "format": "MP4 H.264 yuv420p",
+  "resolution": [
+    1280,
+    800
+  ],
+  "encoded_fps": 20,
+  "encoded_frames": 3480,
+  "duration_s": 174.0,
+  "audio": false,
+  "language": "English",
+  "segments": [
+    {
+      "kind": "intro",
+      "start_s": 0.0,
+      "end_s": 8.0,
+      "source_version": null,
+      "source_trial": null,
+      "measurement_start_s": null,
+      "measurement_end_s": null,
+      "playback_speed": null
+    },
+    {
+      "kind": "progress",
+      "start_s": 8.0,
+      "end_s": 83.0,
+      "source_version": "v0.20.15",
+      "source_trial": 3,
+      "measurement_start_s": 0,
+      "measurement_end_s": 300,
+      "playback_speed": 4
+    },
+    {
+      "kind": "transition",
+      "start_s": 83.0,
+      "end_s": 89.0,
+      "source_version": null,
+      "source_trial": null,
+      "measurement_start_s": null,
+      "measurement_end_s": null,
+      "playback_speed": null
+    },
+    {
+      "kind": "failure",
+      "start_s": 89.0,
+      "end_s": 164.0,
+      "source_version": "v0.20.16",
+      "source_trial": 1,
+      "measurement_start_s": 0,
+      "measurement_end_s": 300,
+      "playback_speed": 4
+    },
+    {
+      "kind": "outro",
+      "start_s": 164.0,
+      "end_s": 174.0,
+      "source_version": null,
+      "source_trial": null,
+      "measurement_start_s": null,
+      "measurement_end_s": null,
+      "playback_speed": null
+    }
+  ],
+  "inherited_layout": "Three side-by-side 392x564 cards; original colors, Arial Unicode, 360x360 displayed observations, time and progress footer",
+  "source_image_size": [
+    256,
+    256
+  ],
+  "camera": "video.image",
+  "synchronization": "earliest recorded request sent_ns referencing each observation; not camera capture timestamps",
+  "method": "Latest past observation hold. Pre-window images initialize the display. No interpolation, simulation rerender, or model inference.",
+  "scene_scope": "Three independent LIBERO environments; simulation only; different trials and trajectories",
+  "frame_mapping": {
+    "file": "ROSA_P2_P4_success_and_failure_20261101.frames.jsonl",
+    "sha256": "a493e4ab886f1a13ed706b341e71af5726e464e28629160f314f831a284dc8a9"
+  },
+  "sources": [
+    {
+      "version": "v0.20.15",
+      "trial": 3,
+      "run_id": "live-af22397cd027433c8a16e59749653399",
+      "raw_path": "results/pod-recovery-fix-20261101/safety-recovery-fix-20261101-v0215-priority/58596c10b49978988d5e17e1ffbe48e8fe88e258c3d837059604dc38ade77719/confirmation-3-run/trial/raw",
+      "evidence_sha256": "8b191af0c9452d3781315699ee9d768bb01282a3eb6b3f3f98900f87b06d023b",
+      "verified_files": 2694,
+      "source_observations": {
+        "P2": 698,
+        "P4": 312,
+        "P3": 333
+      },
+      "measurement_duration_s": 300,
+      "full_window_counts": {
+        "P2": {
+          "applied": 580,
+          "stops": 0,
+          "decisions": 580
+        },
+        "P3": {
+          "applied": 269,
+          "stops": 16,
+          "decisions": 285
+        },
+        "P4": {
+          "applied": 252,
+          "stops": 1,
+          "decisions": 253
+        }
+      },
+      "summary_sha256": "39e0941fffb6eeda0050757801e89ce48f5ceef95055a39549fb9dd479b0fb54"
+    },
+    {
+      "version": "v0.20.16",
+      "trial": 1,
+      "run_id": "live-fa5a6e268a5a47b1b1875fff90a321dd",
+      "raw_path": "results/pod-recovery-fix-20261101/safety-recovery-fix-20261101-v0216-localio/7f6beadea832ef3e432ad132a2e4c7c43f3486bffac2235f6ae53ad642118468/confirmation-1-run/trial/raw",
+      "evidence_sha256": "33852094b28dee84a8b1408a7384f3cca685860479ebba0997ee062b910c2cc0",
+      "verified_files": 2182,
+      "source_observations": {
+        "P2": 700,
+        "P3": 340,
+        "P4": 47
+      },
+      "measurement_duration_s": 300,
+      "full_window_counts": {
+        "P2": {
+          "applied": 591,
+          "stops": 0,
+          "decisions": 591
+        },
+        "P3": {
+          "applied": 280,
+          "stops": 14,
+          "decisions": 294
+        },
+        "P4": {
+          "applied": 0,
+          "stops": 524,
+          "decisions": 524
+        }
+      },
+      "summary_sha256": "d77f3f213bf123761d9cc74853b927bedfaea08f8e949d8170b35e6a0236dc3c"
+    }
+  ]
+}

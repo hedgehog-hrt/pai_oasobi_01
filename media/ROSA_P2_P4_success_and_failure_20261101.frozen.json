@@ -1,0 +1,26 @@
+{
+  "status": "content_frozen",
+  "frozen_on": "2026-11-01",
+  "timezone": "Asia/Tokyo",
+  "duration_s": 174,
+  "scope": "P2/P3/P4, three independent environments; progress and failure examples",
+  "files": {
+    "ROSA_P2_P4_success_and_failure_20261101.mp4": {
+      "bytes": 9974971,
+      "sha256": "70fa7309c3a51a83f1ff62705989417bf739f0672d8ffc66357fe6c0c151130f"
+    },
+    "ROSA_P2_P4_success_and_failure_20261101.json": {
+      "bytes": 4317,
+      "sha256": "a123119f6c096b659aa3f2f7696d45e300e3f5c252311801ee28c641f6597488"
+    },
+    "ROSA_P2_P4_success_and_failure_20261101.frames.jsonl": {
+      "bytes": 1663916,
+      "sha256": "a493e4ab886f1a13ed706b341e71af5726e464e28629160f314f831a284dc8a9"
+    },
+    "ROSA_P2_P4_success_and_failure_20261101.txt": {
+      "bytes": 2937,
+      "sha256": "0a69ad7723537cfed3c868d9d061c07d2761e798de3101626e4d2ddecd818e33"
+    }
+  },
+  "future_revisions": "Create a separate version; preserve these files."
+}

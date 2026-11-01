@@ -1,0 +1,51 @@
+ROSA single-GPU prototype: task progress and recovery failure
+
+Video: ROSA_P2_P4_success_and_failure_20261101.mp4
+Duration: 2 minutes 54 seconds
+Format: MP4 / H.264 / yuv420p / 1280 x 800 / 20 fps / no audio
+Captions: English
+Layout: the same three-panel P2/P3/P4 layout, colors and typography as the earlier video.
+
+Timeline
+00:00-00:08  Introduction
+00:08-01:23  v0.20.15, confirmation trial 3; complete 300-second measurement at 4x speed
+01:23-01:29  Transition and failure context
+01:29-02:44  v0.20.16, confirmation trial 1; complete 300-second measurement at 4x speed
+02:44-02:54  Scope and remaining limitations
+
+The first selected trial passed all fixed confirmation criteria, including the
+supplemental functional recovery criterion. Only one of the three v0.20.15
+confirmation trials passed every criterion. This video does not establish
+stable operation across repetitions.
+
+In the second trial, P4 rejected 524/524 original S1 proposals during measurement.
+P2 and P3 continued in independent environments. P4's two retreat actions occurred
+before the displayed measurement window. Its held scene is a saved observation,
+not newly captured evidence of motion or an encoding error.
+
+Source and playback method
+- These are independent LIBERO/MuJoCo simulations driven by real model inference.
+  No physical robots, shared-workspace cooperation or new GPU experiments are shown.
+- The source is the recorded 256 x 256 overview camera input, scaled to 360 x 360.
+- Images are synchronized by the earliest recorded request that used each image.
+  Those timestamps are not camera capture timestamps.
+- The latest past observation is held until another observation becomes available.
+  Pre-window images initialize each panel. There is no motion interpolation,
+  model rerun, simulator rerender or fabricated intermediate robot motion.
+- 20 fps describes the video encoding, not the original observation capture rate.
+- The episode, control-step count and observation number belong to the displayed
+  observation. The held duration is elapsed source time since its first use.
+- Running S1 counters use the saved evaluator's measured-action selection and only
+  count decisions completed by the displayed timestamp. Warmup and independent
+  retreat actions are excluded. Full-window stop ratios are the saved report values.
+- Status labels are derived from recorded action, retreat and episode events;
+  the displayed observation may precede an action occurring at that source time.
+- The two trials have different versions and trajectories. They are illustrative
+  examples, not a controlled causal before/after comparison.
+
+Sidecar files
+- .json: source identities, evidence hashes, encoding and segment information
+- .frames.jsonl: encoded-frame to saved-observation mapping
+
+See the English submission report for full conditions and unsuccessful trials:
+../report_submission_en_20261101/ROSA_single_GPU_submission_EN_20261101.pdf

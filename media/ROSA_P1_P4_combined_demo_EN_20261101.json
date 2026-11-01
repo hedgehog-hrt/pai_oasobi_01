@@ -1,0 +1,99 @@
+{
+  "video": "ROSA_P1_P4_combined_demo_EN_20261101.mp4",
+  "sha256": "56e8991b91959ff12fc44ae89bae73c975b1b89b6e5e01f6dadb2d9fa175ecf8",
+  "format": "MP4 H.264 yuv420p",
+  "resolution": [
+    1280,
+    800
+  ],
+  "encoded_fps": 20,
+  "encoded_frames": 4080,
+  "duration_s": 204,
+  "audio": false,
+  "language": "English",
+  "sections": [
+    {
+      "kind": "P1_shared_inference",
+      "start_s": 0,
+      "end_s": 30,
+      "playback_speed": 1,
+      "measurement_start_s": 0,
+      "measurement_end_s": 30
+    },
+    {
+      "kind": "intro",
+      "start_s": 30.0,
+      "end_s": 38.0,
+      "source_version": null,
+      "source_trial": null,
+      "measurement_start_s": null,
+      "measurement_end_s": null,
+      "playback_speed": null
+    },
+    {
+      "kind": "progress",
+      "start_s": 38.0,
+      "end_s": 113.0,
+      "source_version": "v0.20.15",
+      "source_trial": 3,
+      "measurement_start_s": 0,
+      "measurement_end_s": 300,
+      "playback_speed": 4
+    },
+    {
+      "kind": "transition",
+      "start_s": 113.0,
+      "end_s": 119.0,
+      "source_version": null,
+      "source_trial": null,
+      "measurement_start_s": null,
+      "measurement_end_s": null,
+      "playback_speed": null
+    },
+    {
+      "kind": "failure",
+      "start_s": 119.0,
+      "end_s": 194.0,
+      "source_version": "v0.20.16",
+      "source_trial": 1,
+      "measurement_start_s": 0,
+      "measurement_end_s": 300,
+      "playback_speed": 4
+    },
+    {
+      "kind": "outro",
+      "start_s": 194.0,
+      "end_s": 204.0,
+      "source_version": null,
+      "source_trial": null,
+      "measurement_start_s": null,
+      "measurement_end_s": null,
+      "playback_speed": null
+    }
+  ],
+  "frozen_video": {
+    "file": "ROSA_P2_P4_success_and_failure_20261101.mp4",
+    "sha256": "70fa7309c3a51a83f1ff62705989417bf739f0672d8ffc66357fe6c0c151130f",
+    "inserted_at_s": 30,
+    "method": "stream copy; no re-encoding"
+  },
+  "p1_source": {
+    "run_id": "live-5a275eaddd254cc5b3c0314442565ff2",
+    "trial": "p1-b1",
+    "raw_path": "results/pod-prototype-20261031/single-gpu-prototype-20261031-v9/fd8b0bcff006078e626e6db5e5b5668582a14e5ec58cd481b07e1f98048a2f58/prototype/p1-b1-run/trial/raw",
+    "source_evidence_sha256": "b5722db5caf9b3fca4d27797404207f57cc6368c0d09d80cfd93604e397bcc1e",
+    "original_video_sha256": "e4321336fa9e8d9b4b9e60d63fc31506cd083b33e0b24148bb2a0bff93ab1a49",
+    "environments": 4,
+    "model": "one shared GR00T S1 model",
+    "gpus": 1,
+    "measurement_duration_s": 30,
+    "playback_speed": 1,
+    "original_frame_observation_mapping_preserved": true
+  },
+  "frame_mapping": {
+    "file": "ROSA_P1_P4_combined_demo_EN_20261101.frames.jsonl",
+    "sha256": "8b3e747a3f6f02b780314f67b63d00dde6d3b5f51f9c6b5c8dcb1f8ea4052278"
+  },
+  "scope": "P1 and P2-P4 are separate trials, not seven simultaneous environments.",
+  "method": "P1 English labels over original saved RGB inputs. Latest past observation held, using first-request timestamps. Frozen P2-P4 video appended unchanged. No interpolation, model inference or simulator rerender."
+}
