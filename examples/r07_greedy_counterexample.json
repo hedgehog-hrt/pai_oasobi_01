@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.0",
+  "id": "synthetic-heterogeneous",
+  "classes": [
+    {
+      "id": "a",
+      "robots": 1,
+      "weight": 1,
+      "min_action_rate_hz": 0,
+      "action_time_s": 0.2,
+      "s2_horizon": 10,
+      "components": [
+        {
+          "id": "s1",
+          "role": "s1",
+          "model_revision": "synthetic-v1",
+          "runtime_fingerprint": "fixture-v1",
+          "deadline_ms": 200
+        }
+      ]
+    },
+    {
+      "id": "b",
+      "robots": 1,
+      "weight": 1,
+      "min_action_rate_hz": 0,
+      "action_time_s": 0.2,
+      "s2_horizon": 10,
+      "components": [
+        {
+          "id": "s1",
+          "role": "s1",
+          "model_revision": "synthetic-v1",
+          "runtime_fingerprint": "fixture-v1",
+          "deadline_ms": 200
+        }
+      ]
+    },
+    {
+      "id": "c",
+      "robots": 1,
+      "weight": 1,
+      "min_action_rate_hz": 0,
+      "action_time_s": 0.2,
+      "s2_horizon": 10,
+      "components": [
+        {
+          "id": "s1",
+          "role": "s1",
+          "model_revision": "synthetic-v1",
+          "runtime_fingerprint": "fixture-v1",
+          "deadline_ms": 200
+        }
+      ]
+    },
+    {
+      "id": "d",
+      "robots": 1,
+      "weight": 1,
+      "min_action_rate_hz": 0,
+      "action_time_s": 0.2,
+      "s2_horizon": 10,
+      "components": [
+        {
+          "id": "s1",
+          "role": "s1",
+          "model_revision": "synthetic-v1",
+          "runtime_fingerprint": "fixture-v1",
+          "deadline_ms": 200
+        }
+      ]
+    }
+  ],
+  "hardware": {
+    "kind": "synthetic-gpu",
+    "gpu_count": 2,
+    "memory_mib": 24000
+  },
+  "profiles": [
+    {
+      "id": "s1-b1",
+      "component_id": "s1",
+      "hardware_kind": "synthetic-gpu",
+      "model_revision": "synthetic-v1",
+      "runtime_fingerprint": "fixture-v1",
+      "source": "synthetic",
+      "batch_size": 1,
+      "batch_wait_ms": 0,
+      "memory_mib": 1000,
+      "capacity_bound_hz": 6,
+      "points": [
+        {
+          "rate_hz": 0,
+          "mean_ms": 50,
+          "p99_ms": 100
+        },
+        {
+          "rate_hz": 6,
+          "mean_ms": 50,
+          "p99_ms": 100
+        }
+      ]
+    }
+  ],
+  "search": {
+    "objective_tolerance": 0.01,
+    "time_limit_s": 20,
+    "max_iterations": 256
+  }
+}

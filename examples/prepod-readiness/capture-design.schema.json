@@ -1,0 +1,54 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "seed": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "states_per_task": {
+      "type": "integer",
+      "minimum": 6,
+      "maximum": 100
+    },
+    "max_steps": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10000
+    },
+    "execute_steps": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 40
+    },
+    "capture_every_chunks": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 100
+    },
+    "profile_fraction": {
+      "type": "number",
+      "minimum": 0.2,
+      "maximum": 0.7
+    },
+    "evaluation_fraction": {
+      "type": "number",
+      "minimum": 0.1,
+      "maximum": 0.4
+    }
+  },
+  "required": [
+    "schema_version",
+    "seed",
+    "states_per_task",
+    "max_steps",
+    "execute_steps",
+    "capture_every_chunks",
+    "profile_fraction",
+    "evaluation_fraction"
+  ],
+  "additionalProperties": false
+}

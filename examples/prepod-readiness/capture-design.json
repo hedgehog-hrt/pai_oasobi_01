@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0",
+  "seed": 42,
+  "states_per_task": 30,
+  "max_steps": 720,
+  "execute_steps": 8,
+  "capture_every_chunks": 4,
+  "profile_fraction": 0.5,
+  "evaluation_fraction": 0.2
+}

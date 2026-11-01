@@ -1,0 +1,7 @@
+{
+  "schema_version": "1.0",
+  "headroom_factor": 1.2,
+  "warmup_hard_cap_s": 3600.0,
+  "measure_hard_cap_s": 21600.0,
+  "max_requests_per_phase": 100000
+}

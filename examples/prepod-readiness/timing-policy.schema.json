@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "headroom_factor": {
+      "type": "number",
+      "minimum": 1.05,
+      "maximum": 3
+    },
+    "warmup_hard_cap_s": {
+      "type": "number",
+      "minimum": 180,
+      "maximum": 86400
+    },
+    "measure_hard_cap_s": {
+      "type": "number",
+      "minimum": 900,
+      "maximum": 172800
+    },
+    "max_requests_per_phase": {
+      "type": "integer",
+      "minimum": 1000,
+      "maximum": 1000000
+    }
+  },
+  "required": [
+    "schema_version",
+    "headroom_factor",
+    "warmup_hard_cap_s",
+    "measure_hard_cap_s",
+    "max_requests_per_phase"
+  ],
+  "additionalProperties": false
+}

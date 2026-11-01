@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "mode": "gpu",
+  "component_id": "s1",
+  "role": "s1",
+  "model_revision": "2ea293aa20ba7cf5bbf3ba17a5fbcb1a01cbfe21",
+  "runtime_fingerprint": "SET_VERIFIED_GROOT_RUNTIME_FINGERPRINT",
+  "hardware_kind": "SET_ACTUAL_GPU_NAME",
+  "binding": {
+    "factory": "rosa_repro.model_backends:groot_backend",
+    "kwargs": {
+      "repo": "/SET/GR00T_REPO",
+      "model_path": "/SET/GR00T_CHECKPOINT",
+      "instruction_key": "task",
+      "stateless_verified": false,
+      "cuda_measurement": true
+    }
+  },
+  "batch_size": 1,
+  "batch_wait_ms": 0,
+  "streams": 16,
+  "deadline_ms": 200,
+  "request_timeout_s": 45.0,
+  "drain_timeout_s": 60.0,
+  "max_dispatch_lag_s": 0.05,
+  "payload_overlay": {}
+}

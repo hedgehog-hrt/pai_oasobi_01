@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "scope": "project_supplement_not_paper_thresholds",
+  "min_state_groups": 3,
+  "min_samples_per_class": 10,
+  "min_groups_per_class": 2,
+  "valid_output_rate": 0.95,
+  "safety_false_clear_max": 0,
+  "safety_false_stop_rate_max": 0.1,
+  "monitor_accuracy_min": 0.9,
+  "monitor_false_done_max": 0,
+  "s2_rubric_pass_rate_min": 0.9
+}

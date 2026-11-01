@@ -1,0 +1,6 @@
+{
+  "schema_version": "1.0",
+  "performance": ["safety-profile/rep0/raw", "safety-profile/rep1/raw", "safety-profile/rep2/raw"],
+  "kernel": "safety-kernel",
+  "quality": {"run": "safety-holdout", "corpus_root": "observations", "references": "safety-labels.json"}
+}

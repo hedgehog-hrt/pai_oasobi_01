@@ -1,0 +1,804 @@
+{
+  "schema_version": "1.0",
+  "mode": "cpu_dummy",
+  "inputs": {
+    "fleet": {
+      "schema_version": "1.0",
+      "id": "r07-mix4-ray-cpu-connection",
+      "classes": [
+        {
+          "id": "p1",
+          "robots": 1,
+          "weight": 1,
+          "min_action_rate_hz": 0,
+          "action_time_s": 0.2,
+          "s2_horizon": 10,
+          "components": [
+            {
+              "id": "s1",
+              "role": "s1",
+              "model_revision": "synthetic-v1",
+              "runtime_fingerprint": "fixture-v1",
+              "deadline_ms": 200
+            }
+          ]
+        },
+        {
+          "id": "p2",
+          "robots": 1,
+          "weight": 1,
+          "min_action_rate_hz": 0,
+          "action_time_s": 0.2,
+          "s2_horizon": 10,
+          "components": [
+            {
+              "id": "s1",
+              "role": "s1",
+              "model_revision": "synthetic-v1",
+              "runtime_fingerprint": "fixture-v1",
+              "deadline_ms": 200
+            },
+            {
+              "id": "monitor",
+              "role": "obligation",
+              "model_revision": "synthetic-v1",
+              "runtime_fingerprint": "fixture-v1",
+              "deadline_ms": 2000,
+              "periodic_hz": 0.5
+            }
+          ]
+        },
+        {
+          "id": "p3",
+          "robots": 1,
+          "weight": 1,
+          "min_action_rate_hz": 0,
+          "action_time_s": 0.2,
+          "s2_horizon": 10,
+          "components": [
+            {
+              "id": "s1",
+              "role": "s1",
+              "model_revision": "synthetic-v1",
+              "runtime_fingerprint": "fixture-v1",
+              "deadline_ms": 200
+            },
+            {
+              "id": "safety",
+              "role": "obligation",
+              "model_revision": "synthetic-v1",
+              "runtime_fingerprint": "fixture-v1",
+              "deadline_ms": 500,
+              "periodic_hz": 2
+            },
+            {
+              "id": "monitor",
+              "role": "obligation",
+              "model_revision": "synthetic-v1",
+              "runtime_fingerprint": "fixture-v1",
+              "deadline_ms": 2000,
+              "periodic_hz": 0.5
+            }
+          ]
+        },
+        {
+          "id": "p4",
+          "robots": 1,
+          "weight": 1,
+          "min_action_rate_hz": 0,
+          "action_time_s": 0.2,
+          "s2_horizon": 10,
+          "components": [
+            {
+              "id": "s1",
+              "role": "s1",
+              "model_revision": "synthetic-v1",
+              "runtime_fingerprint": "fixture-v1",
+              "deadline_ms": 200
+            },
+            {
+              "id": "s2",
+              "role": "s2",
+              "model_revision": "synthetic-v1",
+              "runtime_fingerprint": "fixture-v1",
+              "deadline_ms": 2000
+            },
+            {
+              "id": "safety",
+              "role": "obligation",
+              "model_revision": "synthetic-v1",
+              "runtime_fingerprint": "fixture-v1",
+              "deadline_ms": 500,
+              "periodic_hz": 2
+            },
+            {
+              "id": "monitor",
+              "role": "obligation",
+              "model_revision": "synthetic-v1",
+              "runtime_fingerprint": "fixture-v1",
+              "deadline_ms": 2000,
+              "periodic_hz": 0.5
+            }
+          ]
+        }
+      ],
+      "hardware": {
+        "kind": "synthetic-gpu",
+        "gpu_count": 4,
+        "memory_mib": 24000
+      },
+      "profiles": [
+        {
+          "id": "s1-b4",
+          "component_id": "s1",
+          "hardware_kind": "synthetic-gpu",
+          "model_revision": "synthetic-v1",
+          "runtime_fingerprint": "fixture-v1",
+          "source": "synthetic",
+          "batch_size": 4,
+          "batch_wait_ms": 50,
+          "memory_mib": 1000,
+          "capacity_bound_hz": 20,
+          "points": [
+            {
+              "rate_hz": 0,
+              "mean_ms": 100,
+              "p99_ms": 150
+            },
+            {
+              "rate_hz": 20,
+              "mean_ms": 100,
+              "p99_ms": 150
+            }
+          ]
+        },
+        {
+          "id": "s2-b1",
+          "component_id": "s2",
+          "hardware_kind": "synthetic-gpu",
+          "model_revision": "synthetic-v1",
+          "runtime_fingerprint": "fixture-v1",
+          "source": "synthetic",
+          "batch_size": 1,
+          "batch_wait_ms": 0,
+          "memory_mib": 1000,
+          "capacity_bound_hz": 10,
+          "points": [
+            {
+              "rate_hz": 0,
+              "mean_ms": 200,
+              "p99_ms": 800
+            },
+            {
+              "rate_hz": 10,
+              "mean_ms": 200,
+              "p99_ms": 800
+            }
+          ]
+        },
+        {
+          "id": "safety-b1",
+          "component_id": "safety",
+          "hardware_kind": "synthetic-gpu",
+          "model_revision": "synthetic-v1",
+          "runtime_fingerprint": "fixture-v1",
+          "source": "synthetic",
+          "batch_size": 1,
+          "batch_wait_ms": 0,
+          "memory_mib": 1000,
+          "capacity_bound_hz": 20,
+          "points": [
+            {
+              "rate_hz": 0,
+              "mean_ms": 50,
+              "p99_ms": 200
+            },
+            {
+              "rate_hz": 20,
+              "mean_ms": 50,
+              "p99_ms": 200
+            }
+          ]
+        },
+        {
+          "id": "monitor-b1",
+          "component_id": "monitor",
+          "hardware_kind": "synthetic-gpu",
+          "model_revision": "synthetic-v1",
+          "runtime_fingerprint": "fixture-v1",
+          "source": "synthetic",
+          "batch_size": 1,
+          "batch_wait_ms": 0,
+          "memory_mib": 1000,
+          "capacity_bound_hz": 20,
+          "points": [
+            {
+              "rate_hz": 0,
+              "mean_ms": 50,
+              "p99_ms": 500
+            },
+            {
+              "rate_hz": 20,
+              "mean_ms": 50,
+              "p99_ms": 500
+            }
+          ]
+        }
+      ],
+      "search": {
+        "objective_tolerance": 0.01,
+        "time_limit_s": 20,
+        "max_iterations": 256
+      }
+    },
+    "schedule": {
+      "schema_version": "1.0",
+      "algorithm": "rosa-v1-heterogeneous-independent",
+      "gpu_execution": false,
+      "profile_sources": [
+        "synthetic"
+      ],
+      "status": "feasible",
+      "frequencies_hz": {
+        "p1": 2.0,
+        "p2": 2.0,
+        "p3": 2.0,
+        "p4": 2.0
+      },
+      "weighted_objective": 8.0,
+      "placements": [
+        {
+          "component_id": "monitor",
+          "profile_id": "monitor-b1",
+          "members": [
+            {
+              "class_id": "p4",
+              "robot_id": "0"
+            },
+            {
+              "class_id": "p2",
+              "robot_id": "0"
+            },
+            {
+              "class_id": "p3",
+              "robot_id": "0"
+            }
+          ],
+          "rate_hz": 1.5,
+          "mean_ms": 50.0,
+          "p99_ms": 500,
+          "batch_size": 1,
+          "batch_wait_ms": 0,
+          "memory_mib": 1000,
+          "worker_id": "gpu-0"
+        },
+        {
+          "component_id": "safety",
+          "profile_id": "safety-b1",
+          "members": [
+            {
+              "class_id": "p3",
+              "robot_id": "0"
+            },
+            {
+              "class_id": "p4",
+              "robot_id": "0"
+            }
+          ],
+          "rate_hz": 4,
+          "mean_ms": 50.0,
+          "p99_ms": 200,
+          "batch_size": 1,
+          "batch_wait_ms": 0,
+          "memory_mib": 1000,
+          "worker_id": "gpu-1"
+        },
+        {
+          "component_id": "s2",
+          "profile_id": "s2-b1",
+          "rate_hz": 0.2,
+          "batch_size": 1,
+          "batch_wait_ms": 0,
+          "memory_mib": 1000,
+          "mean_ms": 200.0,
+          "p99_ms": 800,
+          "members": [
+            {
+              "class_id": "p4",
+              "robot_id": "0"
+            }
+          ],
+          "worker_id": "gpu-2"
+        },
+        {
+          "component_id": "s1",
+          "profile_id": "s1-b4",
+          "members": [
+            {
+              "class_id": "p1",
+              "robot_id": "0"
+            },
+            {
+              "class_id": "p2",
+              "robot_id": "0"
+            },
+            {
+              "class_id": "p3",
+              "robot_id": "0"
+            },
+            {
+              "class_id": "p4",
+              "robot_id": "0"
+            }
+          ],
+          "rate_hz": 8.0,
+          "mean_ms": 100.0,
+          "p99_ms": 150,
+          "batch_size": 4,
+          "batch_wait_ms": 50,
+          "memory_mib": 1000,
+          "worker_id": "gpu-3"
+        }
+      ],
+      "routes": {
+        "p1": {
+          "0": {
+            "s1": "gpu-3"
+          }
+        },
+        "p2": {
+          "0": {
+            "monitor": "gpu-0",
+            "s1": "gpu-3"
+          }
+        },
+        "p3": {
+          "0": {
+            "monitor": "gpu-0",
+            "safety": "gpu-1",
+            "s1": "gpu-3"
+          }
+        },
+        "p4": {
+          "0": {
+            "monitor": "gpu-0",
+            "safety": "gpu-1",
+            "s2": "gpu-2",
+            "s1": "gpu-3"
+          }
+        }
+      },
+      "isolated_goal_workers": 5,
+      "compacted_goal_workers": 2,
+      "goal_merges": [
+        {
+          "component_id": "s1",
+          "combined_rate_hz": 4.0,
+          "class_ids": [
+            "p1",
+            "p2"
+          ],
+          "profile_id": "s1-b4",
+          "workers_before": 5,
+          "workers_after": 4
+        },
+        {
+          "component_id": "s1",
+          "combined_rate_hz": 4.0,
+          "class_ids": [
+            "p3",
+            "p4"
+          ],
+          "profile_id": "s1-b4",
+          "workers_before": 4,
+          "workers_after": 3
+        },
+        {
+          "component_id": "s1",
+          "combined_rate_hz": 8.0,
+          "class_ids": [
+            "p1",
+            "p2",
+            "p3",
+            "p4"
+          ],
+          "profile_id": "s1-b4",
+          "workers_before": 3,
+          "workers_after": 2
+        }
+      ],
+      "obligations": {
+        "status": "feasible",
+        "workers": [
+          {
+            "component_id": "monitor",
+            "profile_id": "monitor-b1",
+            "members": [
+              {
+                "class_id": "p4",
+                "robot_id": "0"
+              },
+              {
+                "class_id": "p2",
+                "robot_id": "0"
+              },
+              {
+                "class_id": "p3",
+                "robot_id": "0"
+              }
+            ],
+            "rate_hz": 1.5,
+            "mean_ms": 50.0,
+            "p99_ms": 500,
+            "batch_size": 1,
+            "batch_wait_ms": 0,
+            "memory_mib": 1000,
+            "worker_id": "gpu-0"
+          },
+          {
+            "component_id": "safety",
+            "profile_id": "safety-b1",
+            "members": [
+              {
+                "class_id": "p3",
+                "robot_id": "0"
+              },
+              {
+                "class_id": "p4",
+                "robot_id": "0"
+              }
+            ],
+            "rate_hz": 4,
+            "mean_ms": 50.0,
+            "p99_ms": 200,
+            "batch_size": 1,
+            "batch_wait_ms": 0,
+            "memory_mib": 1000,
+            "worker_id": "gpu-1"
+          }
+        ],
+        "isolated_workers": 5,
+        "merges": [
+          {
+            "component_id": "monitor",
+            "combined_rate_hz": 1.0,
+            "class_ids": [
+              "p2",
+              "p3"
+            ],
+            "profile_id": "monitor-b1",
+            "workers_before": 5,
+            "workers_after": 4
+          },
+          {
+            "component_id": "monitor",
+            "combined_rate_hz": 1.5,
+            "class_ids": [
+              "p2",
+              "p3",
+              "p4"
+            ],
+            "profile_id": "monitor-b1",
+            "workers_before": 4,
+            "workers_after": 3
+          },
+          {
+            "component_id": "safety",
+            "combined_rate_hz": 4,
+            "class_ids": [
+              "p3",
+              "p4"
+            ],
+            "profile_id": "safety-b1",
+            "workers_before": 3,
+            "workers_after": 2
+          }
+        ],
+        "minimum_footprint_proven": false,
+        "profile_unknown": false
+      },
+      "unknown_profile_queries": 0,
+      "optimality_proven": false
+    },
+    "roles": {
+      "s1": "s1",
+      "s2": "s2",
+      "safety": "safety",
+      "monitor": "monitor"
+    },
+    "mode": "cpu_dummy",
+    "bindings": {
+      "s1": {
+        "factory": "rosa_repro.component_runtime:dummy_backend",
+        "kwargs": {
+          "delay_s": 0.08
+        }
+      },
+      "s2": {
+        "factory": "rosa_repro.component_runtime:dummy_backend",
+        "kwargs": {
+          "delay_s": 0.005
+        }
+      },
+      "safety": {
+        "factory": "rosa_repro.component_runtime:dummy_backend",
+        "kwargs": {
+          "delay_s": 0.005
+        }
+      },
+      "monitor": {
+        "factory": "rosa_repro.component_runtime:dummy_backend",
+        "kwargs": {
+          "delay_s": 0.005
+        }
+      }
+    }
+  },
+  "classes": [
+    {
+      "audit": {
+        "id": "p1",
+        "pipeline": "P1",
+        "weight": 1,
+        "s2_horizon": 10,
+        "components": [
+          {
+            "id": "s1",
+            "role": "s1",
+            "deadline_ms": 200
+          }
+        ]
+      },
+      "frequency_hz": 2.0,
+      "action_time_s": 0.2,
+      "robots": [
+        {
+          "robot_id": "[\"p1\",\"0\"]",
+          "local_robot_id": "0",
+          "routes": {
+            "s1": "gpu-3"
+          }
+        }
+      ]
+    },
+    {
+      "audit": {
+        "id": "p2",
+        "pipeline": "P2",
+        "weight": 1,
+        "s2_horizon": 10,
+        "components": [
+          {
+            "id": "s1",
+            "role": "s1",
+            "deadline_ms": 200
+          },
+          {
+            "id": "monitor",
+            "role": "monitor",
+            "deadline_ms": 2000,
+            "period_ns": 2000000000,
+            "phase_ns": 0
+          }
+        ]
+      },
+      "frequency_hz": 2.0,
+      "action_time_s": 0.2,
+      "robots": [
+        {
+          "robot_id": "[\"p2\",\"0\"]",
+          "local_robot_id": "0",
+          "routes": {
+            "monitor": "gpu-0",
+            "s1": "gpu-3"
+          }
+        }
+      ]
+    },
+    {
+      "audit": {
+        "id": "p3",
+        "pipeline": "P3",
+        "weight": 1,
+        "s2_horizon": 10,
+        "components": [
+          {
+            "id": "s1",
+            "role": "s1",
+            "deadline_ms": 200
+          },
+          {
+            "id": "safety",
+            "role": "safety",
+            "deadline_ms": 500,
+            "period_ns": 500000000,
+            "phase_ns": 0
+          },
+          {
+            "id": "monitor",
+            "role": "monitor",
+            "deadline_ms": 2000,
+            "period_ns": 2000000000,
+            "phase_ns": 0
+          }
+        ]
+      },
+      "frequency_hz": 2.0,
+      "action_time_s": 0.2,
+      "robots": [
+        {
+          "robot_id": "[\"p3\",\"0\"]",
+          "local_robot_id": "0",
+          "routes": {
+            "monitor": "gpu-0",
+            "safety": "gpu-1",
+            "s1": "gpu-3"
+          }
+        }
+      ]
+    },
+    {
+      "audit": {
+        "id": "p4",
+        "pipeline": "P4",
+        "weight": 1,
+        "s2_horizon": 10,
+        "components": [
+          {
+            "id": "s1",
+            "role": "s1",
+            "deadline_ms": 200
+          },
+          {
+            "id": "s2",
+            "role": "s2",
+            "deadline_ms": 2000
+          },
+          {
+            "id": "safety",
+            "role": "safety",
+            "deadline_ms": 500,
+            "period_ns": 500000000,
+            "phase_ns": 0
+          },
+          {
+            "id": "monitor",
+            "role": "monitor",
+            "deadline_ms": 2000,
+            "period_ns": 2000000000,
+            "phase_ns": 0
+          }
+        ]
+      },
+      "frequency_hz": 2.0,
+      "action_time_s": 0.2,
+      "robots": [
+        {
+          "robot_id": "[\"p4\",\"0\"]",
+          "local_robot_id": "0",
+          "routes": {
+            "monitor": "gpu-0",
+            "safety": "gpu-1",
+            "s2": "gpu-2",
+            "s1": "gpu-3"
+          }
+        }
+      ]
+    }
+  ],
+  "workers": [
+    {
+      "worker_id": "gpu-0",
+      "component_id": "monitor",
+      "role": "monitor",
+      "model_revision": "synthetic-v1",
+      "runtime_fingerprint": "fixture-v1",
+      "profile_id": "monitor-b1",
+      "profile_source": "synthetic",
+      "expected_memory_mib": 1000,
+      "hardware_kind": "synthetic-gpu",
+      "batch_size": 1,
+      "batch_wait_ms": 0,
+      "resources": {
+        "num_cpus": 1,
+        "num_gpus": 0
+      },
+      "members": [
+        "[\"p4\",\"0\"]",
+        "[\"p2\",\"0\"]",
+        "[\"p3\",\"0\"]"
+      ],
+      "backend": {
+        "factory": "rosa_repro.component_runtime:dummy_backend",
+        "kwargs": {
+          "delay_s": 0.005
+        }
+      }
+    },
+    {
+      "worker_id": "gpu-1",
+      "component_id": "safety",
+      "role": "safety",
+      "model_revision": "synthetic-v1",
+      "runtime_fingerprint": "fixture-v1",
+      "profile_id": "safety-b1",
+      "profile_source": "synthetic",
+      "expected_memory_mib": 1000,
+      "hardware_kind": "synthetic-gpu",
+      "batch_size": 1,
+      "batch_wait_ms": 0,
+      "resources": {
+        "num_cpus": 1,
+        "num_gpus": 0
+      },
+      "members": [
+        "[\"p3\",\"0\"]",
+        "[\"p4\",\"0\"]"
+      ],
+      "backend": {
+        "factory": "rosa_repro.component_runtime:dummy_backend",
+        "kwargs": {
+          "delay_s": 0.005
+        }
+      }
+    },
+    {
+      "worker_id": "gpu-2",
+      "component_id": "s2",
+      "role": "s2",
+      "model_revision": "synthetic-v1",
+      "runtime_fingerprint": "fixture-v1",
+      "profile_id": "s2-b1",
+      "profile_source": "synthetic",
+      "expected_memory_mib": 1000,
+      "hardware_kind": "synthetic-gpu",
+      "batch_size": 1,
+      "batch_wait_ms": 0,
+      "resources": {
+        "num_cpus": 1,
+        "num_gpus": 0
+      },
+      "members": [
+        "[\"p4\",\"0\"]"
+      ],
+      "backend": {
+        "factory": "rosa_repro.component_runtime:dummy_backend",
+        "kwargs": {
+          "delay_s": 0.005
+        }
+      }
+    },
+    {
+      "worker_id": "gpu-3",
+      "component_id": "s1",
+      "role": "s1",
+      "model_revision": "synthetic-v1",
+      "runtime_fingerprint": "fixture-v1",
+      "profile_id": "s1-b4",
+      "profile_source": "synthetic",
+      "expected_memory_mib": 1000,
+      "hardware_kind": "synthetic-gpu",
+      "batch_size": 4,
+      "batch_wait_ms": 50,
+      "resources": {
+        "num_cpus": 1,
+        "num_gpus": 0
+      },
+      "members": [
+        "[\"p1\",\"0\"]",
+        "[\"p2\",\"0\"]",
+        "[\"p3\",\"0\"]",
+        "[\"p4\",\"0\"]"
+      ],
+      "backend": {
+        "factory": "rosa_repro.component_runtime:dummy_backend",
+        "kwargs": {
+          "delay_s": 0.08
+        }
+      }
+    }
+  ],
+  "deployment_scope": "static routes; one replica per worker; no admission or failover",
+  "kernel_execution_verified": false,
+  "plan_id": "a6e5dfc53f18064f1ad1c6cfdb7a03086529f9ba3e9ac388dff08dc4dad78d87"
+}

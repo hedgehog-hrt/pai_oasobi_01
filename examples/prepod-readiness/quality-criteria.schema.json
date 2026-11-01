@@ -1,0 +1,63 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "scope": {
+      "const": "project_supplement_not_paper_thresholds"
+    },
+    "min_state_groups": {
+      "type": "integer",
+      "minimum": 3
+    },
+    "min_samples_per_class": {
+      "type": "integer",
+      "minimum": 10
+    },
+    "min_groups_per_class": {
+      "type": "integer",
+      "minimum": 2
+    },
+    "valid_output_rate": {
+      "type": "number",
+      "minimum": 0.95,
+      "maximum": 1
+    },
+    "safety_false_clear_max": {
+      "const": 0
+    },
+    "safety_false_stop_rate_max": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 0.1
+    },
+    "monitor_accuracy_min": {
+      "type": "number",
+      "minimum": 0.9,
+      "maximum": 1
+    },
+    "monitor_false_done_max": {
+      "const": 0
+    },
+    "s2_rubric_pass_rate_min": {
+      "type": "number",
+      "minimum": 0.9,
+      "maximum": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "scope",
+    "min_state_groups",
+    "min_samples_per_class",
+    "min_groups_per_class",
+    "valid_output_rate",
+    "safety_false_clear_max",
+    "safety_false_stop_rate_max",
+    "monitor_accuracy_min",
+    "monitor_false_done_max",
+    "s2_rubric_pass_rate_min"
+  ],
+  "additionalProperties": false
+}

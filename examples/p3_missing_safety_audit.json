@@ -1,0 +1,111 @@
+{
+  "schema_version": "2.0",
+  "run_id": "run",
+  "clock_domain": "clock",
+  "run_epoch_ns": 0,
+  "window_start_ns": 2000000000,
+  "window_end_ns": 4000000000,
+  "audit_end_ns": 10000000000,
+  "classes": [
+    {
+      "id": "c0",
+      "pipeline": "P3",
+      "weight": 1,
+      "s2_horizon": 10,
+      "components": [
+        {
+          "id": "s1",
+          "role": "s1",
+          "deadline_ms": 200
+        },
+        {
+          "id": "safety",
+          "role": "safety",
+          "deadline_ms": 500,
+          "period_ns": 500000000,
+          "phase_ns": 0
+        },
+        {
+          "id": "monitor",
+          "role": "monitor",
+          "deadline_ms": 2000,
+          "period_ns": 2000000000,
+          "phase_ns": 0
+        }
+      ]
+    }
+  ],
+  "episodes": [
+    {
+      "class_id": "c0",
+      "robot_id": "r0",
+      "episode_id": "e0",
+      "start_ns": 0,
+      "end_ns": 10000000000
+    }
+  ],
+  "records": [
+    {
+      "schema_version": "2.0",
+      "record_type": "request",
+      "run_id": "run",
+      "clock_domain": "clock",
+      "robot_id": "r0",
+      "episode_id": "e0",
+      "request_id": "monitor-0",
+      "attempt_id": "monitor-0-a",
+      "component_id": "monitor",
+      "observation_seq": 0,
+      "scheduled_ns": 0,
+      "sent_ns": 0,
+      "finished_ns": 50000000,
+      "deadline_ms": 2000,
+      "status": "ok",
+      "valid_output": true,
+      "warmup": false,
+      "batch_id": null,
+      "actual_batch_size": null,
+      "slot_index": 0,
+      "plan_request_id": null
+    },
+    {
+      "schema_version": "2.0",
+      "record_type": "request",
+      "run_id": "run",
+      "clock_domain": "clock",
+      "robot_id": "r0",
+      "episode_id": "e0",
+      "request_id": "s1-0",
+      "attempt_id": "s1-0-a",
+      "component_id": "s1",
+      "observation_seq": 0,
+      "scheduled_ns": 2000000000,
+      "sent_ns": 2000000000,
+      "finished_ns": 2050000000,
+      "deadline_ms": 200,
+      "status": "ok",
+      "valid_output": true,
+      "warmup": false,
+      "batch_id": null,
+      "actual_batch_size": null,
+      "slot_index": null,
+      "plan_request_id": null
+    },
+    {
+      "schema_version": "2.0",
+      "record_type": "action",
+      "run_id": "run",
+      "clock_domain": "clock",
+      "robot_id": "r0",
+      "episode_id": "e0",
+      "request_id": "s1-0",
+      "component_id": "s1",
+      "action_id": "act-s1-0",
+      "start_ns": 2050000000,
+      "end_ns": 2060000000,
+      "applied": true,
+      "executed_steps": 8,
+      "safety_stopped": false
+    }
+  ]
+}

@@ -1,0 +1,269 @@
+{
+  "schema_version": "1.0",
+  "algorithm": "rosa-v1-heterogeneous-independent",
+  "gpu_execution": false,
+  "profile_sources": [
+    "synthetic"
+  ],
+  "status": "feasible",
+  "frequencies_hz": {
+    "p1": 2.0,
+    "p2": 2.0,
+    "p3": 2.0,
+    "p4": 2.0
+  },
+  "weighted_objective": 8.0,
+  "placements": [
+    {
+      "component_id": "monitor",
+      "profile_id": "monitor-b1",
+      "members": [
+        {
+          "class_id": "p4",
+          "robot_id": "0"
+        },
+        {
+          "class_id": "p2",
+          "robot_id": "0"
+        },
+        {
+          "class_id": "p3",
+          "robot_id": "0"
+        }
+      ],
+      "rate_hz": 1.5,
+      "mean_ms": 50.0,
+      "p99_ms": 500,
+      "batch_size": 1,
+      "batch_wait_ms": 0,
+      "memory_mib": 1000,
+      "worker_id": "gpu-0"
+    },
+    {
+      "component_id": "safety",
+      "profile_id": "safety-b1",
+      "members": [
+        {
+          "class_id": "p3",
+          "robot_id": "0"
+        },
+        {
+          "class_id": "p4",
+          "robot_id": "0"
+        }
+      ],
+      "rate_hz": 4,
+      "mean_ms": 50.0,
+      "p99_ms": 200,
+      "batch_size": 1,
+      "batch_wait_ms": 0,
+      "memory_mib": 1000,
+      "worker_id": "gpu-1"
+    },
+    {
+      "component_id": "s2",
+      "profile_id": "s2-b1",
+      "rate_hz": 0.2,
+      "batch_size": 1,
+      "batch_wait_ms": 0,
+      "memory_mib": 1000,
+      "mean_ms": 200.0,
+      "p99_ms": 800,
+      "members": [
+        {
+          "class_id": "p4",
+          "robot_id": "0"
+        }
+      ],
+      "worker_id": "gpu-2"
+    },
+    {
+      "component_id": "s1",
+      "profile_id": "s1-b4",
+      "members": [
+        {
+          "class_id": "p1",
+          "robot_id": "0"
+        },
+        {
+          "class_id": "p2",
+          "robot_id": "0"
+        },
+        {
+          "class_id": "p3",
+          "robot_id": "0"
+        },
+        {
+          "class_id": "p4",
+          "robot_id": "0"
+        }
+      ],
+      "rate_hz": 8.0,
+      "mean_ms": 100.0,
+      "p99_ms": 150,
+      "batch_size": 4,
+      "batch_wait_ms": 50,
+      "memory_mib": 1000,
+      "worker_id": "gpu-3"
+    }
+  ],
+  "routes": {
+    "p1": {
+      "0": {
+        "s1": "gpu-3"
+      }
+    },
+    "p2": {
+      "0": {
+        "monitor": "gpu-0",
+        "s1": "gpu-3"
+      }
+    },
+    "p3": {
+      "0": {
+        "monitor": "gpu-0",
+        "safety": "gpu-1",
+        "s1": "gpu-3"
+      }
+    },
+    "p4": {
+      "0": {
+        "monitor": "gpu-0",
+        "safety": "gpu-1",
+        "s2": "gpu-2",
+        "s1": "gpu-3"
+      }
+    }
+  },
+  "isolated_goal_workers": 5,
+  "compacted_goal_workers": 2,
+  "goal_merges": [
+    {
+      "component_id": "s1",
+      "combined_rate_hz": 4.0,
+      "class_ids": [
+        "p1",
+        "p2"
+      ],
+      "profile_id": "s1-b4",
+      "workers_before": 5,
+      "workers_after": 4
+    },
+    {
+      "component_id": "s1",
+      "combined_rate_hz": 4.0,
+      "class_ids": [
+        "p3",
+        "p4"
+      ],
+      "profile_id": "s1-b4",
+      "workers_before": 4,
+      "workers_after": 3
+    },
+    {
+      "component_id": "s1",
+      "combined_rate_hz": 8.0,
+      "class_ids": [
+        "p1",
+        "p2",
+        "p3",
+        "p4"
+      ],
+      "profile_id": "s1-b4",
+      "workers_before": 3,
+      "workers_after": 2
+    }
+  ],
+  "obligations": {
+    "status": "feasible",
+    "workers": [
+      {
+        "component_id": "monitor",
+        "profile_id": "monitor-b1",
+        "members": [
+          {
+            "class_id": "p4",
+            "robot_id": "0"
+          },
+          {
+            "class_id": "p2",
+            "robot_id": "0"
+          },
+          {
+            "class_id": "p3",
+            "robot_id": "0"
+          }
+        ],
+        "rate_hz": 1.5,
+        "mean_ms": 50.0,
+        "p99_ms": 500,
+        "batch_size": 1,
+        "batch_wait_ms": 0,
+        "memory_mib": 1000,
+        "worker_id": "gpu-0"
+      },
+      {
+        "component_id": "safety",
+        "profile_id": "safety-b1",
+        "members": [
+          {
+            "class_id": "p3",
+            "robot_id": "0"
+          },
+          {
+            "class_id": "p4",
+            "robot_id": "0"
+          }
+        ],
+        "rate_hz": 4,
+        "mean_ms": 50.0,
+        "p99_ms": 200,
+        "batch_size": 1,
+        "batch_wait_ms": 0,
+        "memory_mib": 1000,
+        "worker_id": "gpu-1"
+      }
+    ],
+    "isolated_workers": 5,
+    "merges": [
+      {
+        "component_id": "monitor",
+        "combined_rate_hz": 1.0,
+        "class_ids": [
+          "p2",
+          "p3"
+        ],
+        "profile_id": "monitor-b1",
+        "workers_before": 5,
+        "workers_after": 4
+      },
+      {
+        "component_id": "monitor",
+        "combined_rate_hz": 1.5,
+        "class_ids": [
+          "p2",
+          "p3",
+          "p4"
+        ],
+        "profile_id": "monitor-b1",
+        "workers_before": 4,
+        "workers_after": 3
+      },
+      {
+        "component_id": "safety",
+        "combined_rate_hz": 4,
+        "class_ids": [
+          "p3",
+          "p4"
+        ],
+        "profile_id": "safety-b1",
+        "workers_before": 3,
+        "workers_after": 2
+      }
+    ],
+    "minimum_footprint_proven": false,
+    "profile_unknown": false
+  },
+  "unknown_profile_queries": 0,
+  "optimality_proven": false
+}

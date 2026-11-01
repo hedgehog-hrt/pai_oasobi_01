@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "performance": [
+    "s1-b4-profile/rep0/raw",
+    "s1-b4-profile/rep1/raw",
+    "s1-b4-profile/rep2/raw"
+  ],
+  "kernel": "s1-b4-kernel",
+  "quality": {
+    "regression": "s1-same-shape-b1",
+    "batch_regression": "s1-same-shape-b4",
+    "batch_diagnostic": "s1-serial-vs-b4",
+    "paired": "s1-paired",
+    "state_bank": "initial-states",
+    "association": "s1-b4-association.json",
+    "r06": {
+      "suite": "r06/suite.json",
+      "bank_root": "r06/banks",
+      "directories": "r06/directories.json"
+    }
+  }
+}

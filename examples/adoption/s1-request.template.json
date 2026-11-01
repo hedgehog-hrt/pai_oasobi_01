@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "performance": [
+    "s1-profile/rep0/raw",
+    "s1-profile/rep1/raw",
+    "s1-profile/rep2/raw"
+  ],
+  "kernel": "s1-kernel",
+  "quality": {
+    "regression": "s1-numerical",
+    "paired": "s1-paired",
+    "state_bank": "initial-states",
+    "association": "s1-association.json",
+    "r06": {
+      "suite": "r06/suite.json",
+      "bank_root": "r06/banks",
+      "directories": "r06/directories.json"
+    }
+  }
+}
