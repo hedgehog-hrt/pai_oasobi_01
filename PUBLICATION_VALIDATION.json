@@ -286,5 +286,14 @@
     "scope": "Local public repository tree plus public external pages. Owner confirmed that the GitHub repository is not yet published.",
     "publication_status": "not_published_confirmed_by_owner",
     "github_deployed_file_layout_check_reason": "Not applicable until publication."
+  },
+  "readme_title_update": {
+    "date": "2026-11-01",
+    "previous_title": "P-AI ROSA: Single-GPU Reproduction Prototype",
+    "title": "Implementation and Evaluation of a Single GPU ROSA Reproduction Prototype",
+    "matches_fixed_english_report_title": true,
+    "readme_sha256": "074956c83a4d4133abfc6eaa7f594e6c11ecf6a6700d1e38a267f32e6a5eaad1",
+    "body_and_links_unchanged": true,
+    "github_update_performed_by_assistant": false
   }
 }
