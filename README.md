@@ -6,10 +6,6 @@ The prototype connects GR00T action generation, Qwen vision-language models, Ray
 
 **Current status — 1 November 2026:** shared inference and real-model closed-loop execution have been demonstrated on one GPU. Full reproduction of the paper's performance and stable operation of the final recovery configuration remain incomplete. The current source is **v0.20.17**, whose Monitor termination fix passed CPU tests but has not been validated on a GPU. The last GPU-tested version is **v0.20.16**.
 
-- [English report — 5-page main text and 12-page appendix](reports/ROSA_single_GPU_submission_EN_20261101.pdf)
-- [Versioned reproduction materials](docs/REPRODUCTION_ASSETS.md)
-- [P1–P4 demonstration — 3 min 24 s](media/ROSA_P1_P4_combined_demo_EN_20261101.mp4)
-- [Publication contents and integrity verification](PUBLICATION.md)
 - [License scope and third-party terms](#licensing)
 - [ROSA paper, v1](https://arxiv.org/abs/2607.01088v1)
 
